@@ -7,9 +7,11 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 
+
 class AdminDashboardView(LoginRequiredMixin, TemplateView):
     template_name = 'admin/admin_dashboard.html'
     
+
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
@@ -79,9 +81,9 @@ def create_student(request):
             student.save()
 
             messages.success(request, "Student created successfully!")
-            return redirect('student_list')  # Adjust to your student listing view
+            return redirect('admin_dashboard')  # Adjust to your student listing view
 
         except IntegrityError:
             messages.error(request, "Username already exists.")
     
-    return render(request, 'create/create_student.html')
+    return render(request, 'students/create_student.html')

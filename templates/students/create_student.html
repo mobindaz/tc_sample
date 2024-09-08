@@ -1,31 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Student</title>
-    
-    <!-- AdminLTE CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2.0/dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2.0/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-
-    <style>
-        .content-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f6f9;
-        }
-        .card {
-            width: 500px;
-            padding: 20px;
-        }
-    </style>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
     <div class="content-wrapper">
+        {% if messages %}
+      
+        {% endif %}
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Create New Student</h3>
@@ -102,9 +80,4 @@
             </div>
         </div>
     </div>
-
-    <!-- AdminLTE JS -->
-    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2.0/plugins/jquery/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2.0/dist/js/adminlte.min.js"></script>
-</body>
-</html>
+    {% endblock %}
